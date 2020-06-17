@@ -1,3 +1,5 @@
+{% load static %}
+
 {% block body %}
 
 	<!-- Main layout -->
@@ -29,14 +31,13 @@
               <!--Slides-->
               <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                  <div class="view">
-                    <img class="d-block w-100 rounded" src="https://mdbootstrap.com/img/Photos/Slides/img%20(140).jpg"
-                      alt="First slide">
+                  <div class="view" style="height: 400px;">
+                    <img class="d-block h-100 w-100 rounded" src="{% static 'img/felix.jpg' %}" alt="First slide">
                     <div class="mask rgba-black-light"></div>
                   </div>
                   <div class="carousel-caption">
-                    <h3 class="h3-responsive font-weight-bold">Title of the news</h3>
-                    <p>First text</p>
+                    <h3 class="h3-responsive font-weight-bold">Felix</h3>
+                    <p>Amnesty reproche à Tshisekedi de ne pas faire avancer la justice en RDC</p>
                   </div>
                 </div>
                 <div class="carousel-item">
@@ -558,38 +559,76 @@
 
             <ul class="list-group z-depth-1 mt-4">
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a>Business</a>
+                <a>Santé</a>
                 <span class="badge badge-danger badge-pill">4</span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a>Entertainment</a>
-                <span class="badge badge-danger badge-pill">2</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a>Health</a>
-                <span class="badge badge-danger badge-pill">1</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a>Lifestyle</a>
-                <span class="badge badge-danger badge-pill">2</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a>Photography</a>
-                <span class="badge badge-danger badge-pill">1</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a>Technology</a>
-                <span class="badge badge-danger badge-pill">2</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
                 <a>Sport</a>
+                <span class="badge badge-danger badge-pill">2</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>Economie & Finance</a>
+                <span class="badge badge-danger badge-pill">1</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>Politiques</a>
+                <span class="badge badge-danger badge-pill">2</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>Société</a>
+                <span class="badge badge-danger badge-pill">1</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>Justice</a>
+                <span class="badge badge-danger badge-pill">2</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>Education</a>
+                <span class="badge badge-danger badge-pill">5</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>Culture</a>
+                <span class="badge badge-danger badge-pill">5</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a>Divers</a>
                 <span class="badge badge-danger badge-pill">5</span>
               </li>
             </ul>
           </section>
           <!-- Section: Categories -->
+          
+		  <!-- Section: Advertisment -->
+          <section class="section mt-5">
 
-          <h4 class="font-weight-bold"><strong>RECOMMEND POSTS</strong></h4>
+            <h6 class="grey-text text-center mb-3"><strong>- Partenaires -</strong></h6>
+
+            <!--Jumbotron-->
+            <div class="jumbotron text-center">
+
+              <!--Title-->
+              <h1 class="card-title h2-responsive mt-2"><strong>For pub</strong></h1>
+              <!--Subtitle-->
+              <p class="blue-text mb-4 mt-5 font-weight-bold">For pub</p>
+
+              <!--Text-->
+              <div class="d-flex justify-content-center">
+                <p class="card-text mb-1" style="max-width: 43rem;">Pub desc
+                </p>
+              </div>
+
+              <hr class="my-4">
+
+              <!--button type="button" class="btn btn-primary btn-sm waves-effect"> <span class="far fa-gem ml-1"></span></button>
+              <button type="button" class="btn btn-outline-primary btn-sm waves-effect">Download <i class="fas fa-download ml-1"></i></button-->
+
+            </div>
+            <!--Jumbotron-->
+
+          </section>
+          <!--/ Section: Advertisment -->
+          
+          <h4 class="font-weight-bold"><strong>AFFAIRES RECOMMENDEES</strong></h4>
           <hr class="red title-hr mb-4">
 
           <!-- Section: News widget -->
@@ -598,13 +637,13 @@
             <!-- Nav tabs -->
             <ul class="nav md-tabs tabs-3 nav-justified widget-tabs mdb-color lighten-3" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active px-0" data-toggle="tab" href="#panel1" role="tab">RECOMMEND</a>
+                <a class="nav-link active px-0" data-toggle="tab" href="#panel1" role="tab">RECOMMENDEES</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">RECENT</a>
+                <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">RECENTES</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">TOP REVIEWS</a>
+                <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">TOP VUES</a>
               </li>
             </ul>
 
@@ -893,37 +932,7 @@
           </section>
           <!--/ Section: News widget -->
 
-          <!-- Section: Advertisment -->
-          <section class="section mt-5">
-
-            <h6 class="grey-text text-center mb-3"><strong>- Advertisment -</strong></h6>
-
-            <!--Jumbotron-->
-            <div class="jumbotron text-center">
-
-              <!--Title-->
-              <h1 class="card-title h2-responsive mt-2"><strong>Material Design for Bootstrap</strong></h1>
-              <!--Subtitle-->
-              <p class="blue-text mb-4 mt-5 font-weight-bold">Powerful and free Material Design UI KIT</p>
-
-              <!--Text-->
-              <div class="d-flex justify-content-center">
-                <p class="card-text mb-1" style="max-width: 43rem;">Sed ut perspiciatis unde omnis iste natus sit
-                  voluptatem accusantium doloremque laudantium,
-                  totam rem aperiam.
-                </p>
-              </div>
-
-              <hr class="my-4">
-
-              <button type="button" class="btn btn-primary btn-sm waves-effect">Buy now <span class="far fa-gem ml-1"></span></button>
-              <button type="button" class="btn btn-outline-primary btn-sm waves-effect">Download <i class="fas fa-download ml-1"></i></button>
-
-            </div>
-            <!--Jumbotron-->
-
-          </section>
-          <!--/ Section: Advertisment -->
+          
 
           <!-- Section: Newsletter -->
           <section class="section mt-5">
@@ -967,12 +976,11 @@
           <!--/ Section: Newsletter -->
 
           <!-- Section: Gallery -->
-          <section class="section sidebar-imgs mb-5">
+          <!--section class="section sidebar-imgs mb-5">
 
-            <h4 class="font-weight-bold"><strong>GALLERY</strong></h4>
+            <h4 class="font-weight-bold"><strong>EVENEMENT</strong></h4>
             <hr class="red title-hr">
 
-            <!--Grid row-->
 
             <div class="row">
               <div class="col-md-12">
@@ -1049,15 +1057,14 @@
               </div>
 
             </div>
-            <!--Grid row-->
 
-          </section>
+          </section-->
           <!--/ Section: Gallery -->
 
           <!-- Section: Featured posts -->
           <section class="section widget-content">
             <!-- Heading -->
-            <h4 class="font-weight-bold pt-2"><strong>FEATURED POSTS</strong></h4>
+            <h4 class="font-weight-bold pt-2"><strong>EVENEMENTS</strong></h4>
             <hr class="red title-hr mb-4">
 
             <!--/ Card -->
