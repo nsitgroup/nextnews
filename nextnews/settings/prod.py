@@ -9,7 +9,7 @@ ALLOWED_HOSTS = ['nextnews.nsitbuild.com']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'nsitdb',
+        'NAME': 'nextnewsdb',
         'USER': 'adminnsit',
         'PASSWORD': 'Nsit2020!',
         'HOST': 'localhost',

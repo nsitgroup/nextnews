@@ -17,14 +17,33 @@
 
 <body class="fixed-sn homepage-v5">
 
-  {% block navbar %}
-	{% include 'navbar.html' %} 
-  {% endblock %}
+  <!-- Navigation -->
+  <header>
+	  {% block navbar %}
+		{% include 'navbar.html' %} 
+	  {% endblock %}
+  </header>
+  <!--/ Navigation -->
+  
+  <!-- Magazine -->
+  <div class="row mt-2">
 
-  {% block body %}
-  	{% include 'body.html' %}
-  {% endblock %}
+    <!-- Main news -->
+      <div class="col-xl-8 col-md-12">
+			{% block body %}
+			{% endblock %}
+	  </div>
+			
+	  <div class="col-xl-3 col-md-12 widget-column mt-0">
+			{% block sidebar %}
+				{% include 'sidebar.html' %}
+			{% endblock %}
 
+      </div>
+      <!--/ Main news -->
+  </div>
+  <!--/ Magazine -->
+      
   {% block footer %}
 	{% include 'footer.html' %}
   {% endblock %}

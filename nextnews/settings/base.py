@@ -31,16 +31,21 @@ EMAIL_HOST_PASSWORD = 'Nsit2020!'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'h%3n7qlxh$vj*-an&-xup*0$gjb44_^m-+t^fcm0f8nli4+$kl'
 
+AUTH_USER_MODEL = 'accounts.Account'
 
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles'
+    'django.contrib.staticfiles',
+    'contact',
+    'news',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -73,7 +78,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'nextnews.wsgi.application'
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'height': 500,
+        'width': 1000,
+        'toolbar_Custom': [
+            ['Style', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo'],
+            ['Link', 'Unlink'],
+            ['Flash', 'Table', 'HorizontalRule'],
+            ['TextColor', 'BGColor'],
+            ['Smiley', 'SpecialChar'],
+        ]
+    }
+}
 
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
