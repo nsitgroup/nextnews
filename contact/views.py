@@ -10,6 +10,10 @@ from django.core.mail import BadHeaderError, send_mail
 from django.http import Http404
 from django.contrib import messages
 
+from django.core import mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+
 def contactForm(request):
     form = ContactForm
     target = TargetForm
@@ -25,13 +29,26 @@ def contactForm(request):
             contact = form.save(commit=False)
             contact.save()
             
+            """
             send_mail(
                 contact_subject,
                 contact_content,
                 contact_email,
                 ['nsitsenegal@gmail.com'],
                 fail_silently=False,
-            )
+            )"""
+            context = {
+                'name': contact_firstname
+            }
+            
+            subject = 'Subject'
+            html_message = render_to_string('contact/mail_template.html', context)
+            plain_message = strip_tags(html_message)
+            from_email = '<from@example.com>'
+            to = contact_email
+            
+            mail.send_mail(subject, plain_message, from_email, [to], html_message=html_message)
+
             return redirect('home')
         
     context = {
