@@ -49,16 +49,52 @@
   {% endblock %}
 
 
+
+	<!--Modal: modalCookie-->
+	<div class="modal fade bottom" id="modalCookie1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+	  aria-hidden="true" data-backdrop="true">
+	  <div class="modal-dialog modal-frame modal-top modal-notify modal-info" role="document">
+	    <!--Content-->
+	    <div class="modal-content">
+	      <!--Body-->
+	      <div class="modal-body">
+	        <div class="row d-flex justify-content-center align-items-center">
+	
+	          <p class="pt-3 pr-2">Ce site utilise des cookies afin d'améliorer l'expérience des visiteurs et leur proposer des publications adaptées à leur profil...</p>
+	
+	          <a type="button" class="btn btn-primary">En savoir plus <i class="fa fa-book ml-1"></i></a>
+	          <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Ok, Merci</a>
+	        </div>
+	      </div>
+	    </div>
+	    <!--/.Content-->
+	  </div>
+	</div>
+	<!--Modal: modalCookie-->
+
+
   <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/popper.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/mdb.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/js-cookie.js' %}"></script>
 
   <script>
     // MDB Lightbox Init
     $(function () {
       $("#mdb-lightbox-ui").load("../../mdb-addons/mdb-lightbox-ui.html");
     });
+
+	console.log('-----------------------------0');
+    $(document).ready(function() {
+    	console.log('-----------------------------1');
+   	   if (Cookies.get("popup_1_2") == null) {
+       	console.log('-----------------------------2');
+   	      $('#modalCookie1').modal('show');
+   	      Cookies.get("popup_1_2", "2");
+   	   }
+   	console.log('-----------------------------3');
+   	 });
   </script>
 
 </body>
