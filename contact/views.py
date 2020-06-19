@@ -10,27 +10,21 @@ from django.core.mail import BadHeaderError, send_mail
 from django.http import Http404
 from django.contrib import messages
 
-
-
-
-
-# Contact form view
-
-def contact(request):
-    classe_active=5
-    Contact_Form = ContactForm
+def contactForm(request):
+    form = ContactForm
+    target = TargetForm
     if request.method == 'POST':
-        form = Contact_Form(request.POST)
-
+        form = ContactForm(request.POST)
+        print(form)
         if form.is_valid():
-            contact_name = request.POST.get('nom')
-            contact_email = request.POST.get('Email')
-            contact_subject = request.POST.get('Sujet')
-            contact_content = request.POST.get('Message')
+            contact_firstname = request.POST.get('firstname')
+            contact_lastname = request.POST.get('lastname')
+            contact_email = request.POST.get('email')
+            contact_subject = request.POST.get('subject')
+            contact_content = request.POST.get('message')
             contact = form.save(commit=False)
             contact.save()
-            # TO DO Fix mail send
-
+            
             send_mail(
                 contact_subject,
                 contact_content,
@@ -38,18 +32,13 @@ def contact(request):
                 ['nsitsenegal@gmail.com'],
                 fail_silently=False,
             )
-
-            
-
-            # msg = EmailMessage(contact_subject,
-            #                    'Here is the message.', to=[contact_email])
-            # msg.send()
-
-
             return redirect('home')
-
-            #return redirect('blog:success')
-    return redirect('home')
+        
+    context = {
+        "form": form,
+        "target": target
+    }
+    return render(request, 'contact/contact_create.html', context)
 
 
 def contact_detail(request, contact_id):

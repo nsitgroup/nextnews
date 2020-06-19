@@ -223,11 +223,11 @@
                                     </div>
                                     <div class="media-body">
                                         <div class="media-heading">
-                                            <a href="{% url 'contact:detailContact' contact.id %}"  class="m-r-10">{{ contact.Sujet }}</a>
+                                            <a href="{% url 'contact:detailContact' contact.id %}"  class="m-r-10">{{ contact.subject }}</a>
                                             <span class="badge bg-red">Encours</span>
-                                            <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">{{ contact.Date_modification   }}</time> </small>
+                                            <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">{{ contact.date_modif   }}</time> </small>
                                         </div>
-                                        <p class="msg">{{ contact.Email }} | {{ contact.Message   }} </p>
+                                        <p class="msg">{{ contact.email }} | {{ contact.message   }} </p>
                                     </div>
                                 </div>
                             </li>

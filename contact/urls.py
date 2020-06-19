@@ -8,7 +8,8 @@ from django.urls import path
 app_name = 'contact'
 
 urlpatterns = [
-    path('', views.contact , name='contact'),
+    path('', views.contactForm , name='form'),
+    
     path('listing', views.contact_list, name='indexContact'),
     path('<int:contact_id>/', views.contact_detail, name='detailContact'),
     path('delete/<int:contact_id>/', views.contact_delete, name='deleteContact'),
