@@ -1,3 +1,4 @@
+{% load static %}
 {% block navbar %}
 	
     <!--Navbar-->
@@ -44,31 +45,31 @@
 		            </div>
 		          </li-->
 					<li class="nav-item">
-		                 <a class="nav-link">Santé</a>
+		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='he' %}">Santé</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link">Sport</a>
+		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='sp' %}">Sport</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link">Economie & Finance</a>
+		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='ef' %}">Economie & Finance</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link">Politiques</a>
+		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='po' %}">Politiques</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link">Société</a>
+		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='so' %}">Société</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link">Justice</a>
+		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='ju' %}">Justice</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link">Education</a>
+		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='ed' %}">Education</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link">Culture</a>
+		                 <a class="nav-link bg-white" href="{% url 'news:categoryNews' cat_id='cu' %}">Culture</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link">Divers</a>
+		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='di' %}">Divers</a>
 		            </li>
 		        </ul>
 		        <!-- Links -->

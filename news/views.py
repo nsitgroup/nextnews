@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+CATEGORY = (
+    
+)
 
 def homepage(request):
     print('++++++++++++++++++++++++++++++++++++homepage')
@@ -11,6 +14,7 @@ def case_follow(request, case_id):
     print('++++++++++++++++++++++++++++++++++++case_follow')
     return render(request, "news/case.html")
 
-def news_details(request):
-    print('++++++++++++++++++++++++++++++++++++news_details')
+def category_news(request, cat_id):
+    print('++++++++++++++++++++++++++++++++++++cat_id : ' + cat_id)
+    # get news here by cat_id
     return render(request, "news/news.html")

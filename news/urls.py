@@ -10,6 +10,6 @@ app_name = 'news'
 urlpatterns = [
     path('', views.homepage , name='case'),
     path('case/<int:case_id>/', views.case_follow, name='followCase'),
-    path('<int:news_id>/', views.news_details, name='detailsNews')
+    path('news/<str:cat_id>/', views.category_news, name='categoryNews')
 
 ]
