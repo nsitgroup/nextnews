@@ -1,0 +1,23 @@
+{% extends 'admin/base_admin.html' %}
+
+
+
+
+{% block fullcontent %}
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <h1 class="mt-2">Mis à jour article</h1>
+          <hr class="mt-0 mb-4">
+        <form action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form}}
+          <input type="submit" value="Enregistrer l'article" class="btn btn-success float-right"/>
+        </form>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
+  

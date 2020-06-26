@@ -1,0 +1,235 @@
+{% extends 'admin/base_admin.html' %}
+{% block titre %} {{ block.super }} - Dashboard {% endblock %}
+{% load static %}
+
+{% block css %}
+
+
+
+{% endblock %}
+
+{% block fullcontent %}
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+   
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <a href="" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Générer un rapport</a>
+          </div>
+
+         <!-- Content Row -->
+          <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Sport</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ maisons | length }}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-home fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Santé</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ appartements | length }}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-building fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Politiques</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ chambres | length }}</div>
+                        </div>
+                        <div class="col">
+             
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Sociétés</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ terrains | length }}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-map-marker fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+           <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-6 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Cas</h6>
+                  <div class="dropdown no-arrow">
+         <div id='chart_pie_3_legend'></div> 
+
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-area">
+                   <div id='chart_pie_3' class='chart_morris'></div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Pie Chart -->
+            <div class="col-xl-6 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Actualité</h6>
+                  <div class="dropdown no-arrow">
+         
+
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-area">
+                        <div id='chart_hist_1' class='chart_morris'></div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+
+         </div>
+
+
+
+
+
+
+              </div>
+
+                       </div>
+            </div>
+
+
+       {% block footer %}      
+
+       {% endblock %}      
+
+
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <!-- Logout Modal-->
+
+
+
+
+<!-- 
+ 
+       <div id='chart_hist_1' class='chart_morris'></div>
+       <div id='chart_hist_1_legend'></div>
+       <div id='chart_pie_1' class='chart_morris'></div>
+       <div id='chart_hist_1_legend'></div>
+
+            <div id='chart_pie_3' class='chart_morris'></div> 
+            <div id='chart_pie_3_legend'></div> -->
+
+{% endblock %}
+
+
+{% block script %} 
+
+<script>
+
+
+    Morris.Bar({
+      element: 'chart_hist_1',
+      data: [
+        {% for produit in produits %}
+        {team:'{{ produit.title }}', nb: {{ produit.prix }}},
+        {% endfor %}
+      ],
+      horizontal: false,
+      xkey: 'team',
+      ykeys: ['nb'],
+      labels: ['Les prix des produits'],
+    });
+
+    pie_data = [
+        {% for prod in categories %}
+        {label: '{{ prod.categorie }}', value: {{ prod.total }}},
+        {% endfor %}
+      ];
+
+    Morris.Donut({
+      element: 'chart_pie_3',
+      data: pie_data,
+      donutType: 'pie',
+      dataLabels: true
+    }).options.colors.forEach(function(color, a){ 
+      if (pie_data[a] != undefined) {
+        var node = document.createElement('span');
+        node.innerHTML += '<span style="color:'+color+'"><i style="margin-left: 15px;" class="fas fa-square"></i> '+pie_data[a].label+'</span>';
+        document.getElementById("chart_pie_3_legend").appendChild(node);
+      }
+    });
+
+</script>
+{% endblock %}
+
+

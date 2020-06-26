@@ -3,3 +3,4 @@ env/
 env
 __pycache__
 /nextnews.iml
+db.sqlite3

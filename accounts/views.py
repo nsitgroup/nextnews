@@ -16,7 +16,7 @@ def registration_view(request):
             raw_password = form.cleaned_data.get('password1')
             account = authenticate(email=email, password=raw_password)
             login(request, account)
-            return HttpResponseRedirect(reverse("product:home"))
+            return HttpResponseRedirect(reverse("home"))
         else:
             context['registration_form'] = form
 
@@ -45,7 +45,7 @@ def login_view(request):
 
     user = request.user
     if user.is_authenticated: 
-        return HttpResponseRedirect(reverse("product:home"))
+        return HttpResponseRedirect(reverse("home"))
 
     if request.POST:
         form = AccountAuthenticationForm(request.POST)
@@ -56,7 +56,7 @@ def login_view(request):
 
             if user:
                 login(request, user)
-                return HttpResponseRedirect(reverse("product:home"))
+                return HttpResponseRedirect(reverse("home"))
 
     else:
         form = AccountAuthenticationForm()

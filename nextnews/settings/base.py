@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'contact',
     'news',
     'ckeditor',
+    'dashboard',
     'bootstrap4'
 ]
 

@@ -16,7 +16,12 @@
           <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet,
             consectetur
             adipisicing elit.</p>
+          {% if user.is_authenticated and user.is_staff %}
+          <a class="text-dark" href="/dashboard">
+            <i class="fa fa-user mr-3"></i>Back office</a>
+          {% endif %}
         </div>
+
         <!--/.Grid column-->
 
         <hr class="w-100 clearfix d-md-none">

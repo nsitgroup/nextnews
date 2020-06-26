@@ -45,31 +45,31 @@
 		            </div>
 		          </li-->
 					<li class="nav-item">
-		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='he' %}">Santé</a>
+		                 <a class="nav-link" href="#he">Santé</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='sp' %}">Sport</a>
+		                 <a class="nav-link" href="#sp">Sport</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='ef' %}">Economie & Finance</a>
+		                 <a class="nav-link" href="#ef">Economie & Finance</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='po' %}">Politiques</a>
+		                 <a class="nav-link" href="#po">Politiques</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='so' %}">Société</a>
+		                 <a class="nav-link" href="#so">Société</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='ju' %}">Justice</a>
+		                 <a class="nav-link" href="#ju">Justice</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='ed' %}">Education</a>
+		                 <a class="nav-link" href="#ed">Education</a>
 		            </li>
 					<li class="nav-item border border-bottom-danger">
-		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='cu' %}">Culture</a>
+		                 <a class="nav-link" href="#cu">Culture</a>
 		            </li>
 					<li class="nav-item">
-		                 <a class="nav-link" href="{% url 'news:categoryNews' cat_id='di' %}">Divers</a>
+		                 <a class="nav-link" href="#di">Divers</a>
 		            </li>
 		        </ul>
 		        <!-- Links -->
@@ -80,10 +80,39 @@
 		            <input class="form-control mr-sm-2" type="text" placeholder="Recherche..." aria-label="Search">
 		          </div>
 		        </form>
-		      </div>
+
+			  </div>
+
 		      <!-- Collapsible content -->
 	  </div>
-    </nav>
+		<div class="col-sm-2 pull-right">
+
+			{% if user.is_authenticated %}
+			<!--li class="nav-item d-none d-xl-inline-block" alt="Support" id="navbar-static-support"-->
+			<a href="{% url 'accounts:logout' %}" class="nav-link waves-effect">
+				<i class="fas fa-power-off"></i><span class="d-none d-xl-inline-block text-dark  px-2">Déconnexion</span>
+			</a>
+			<!--/li-->
+			{% else %}
+			<!--li class="nav-item d-none d-xl-inline-block" alt="Support" id="navbar-static-support">
+    <a href="{% url 'accounts:register' %}" class="nav-link waves-effect">
+    <i class="fas fa-registered"></i><span class="d-none d-xl-inline-block">S'inscrire</span>
+    </a>
+  </li-->
+			<!--li class="nav-item d-none d-xl-inline-block" alt="Support" id="navbar-static-support"-->
+			<a href="{% url 'accounts:login' %}" class="nav-link waves-effect text-dark">
+				<i class="fas fa-sign-in-alt"></i><span class="d-none d-xl-inline-block  px-2">Connexion</span>
+			</a>
+			<!--/li-->
+			{% endif %}
+
+			<!-- Links -->
+
+
+
+		</div>
+
+	</nav>
     <!--/.Navbar-->
 	
 {% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'admin/base_admin.html' %}
+
+{% load static %}
+
+{% block css %} 
+{% endblock %}
+
+{% block fullcontent %}
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-5">
+
+            <div class="card card-primary card-outline">
+                <div class="card-body box-profile">
+
+                    <div class="text-center">
+                        <img class="profile-user-img img-fluid img-circle" src="{{ news.image.url }}" alt="User profile picture">
+                    </div>
+
+                    <div class="mt-4 product-share">
+                        <a href="{% url 'news:editNews' news.id %}" class="text-gray">
+                            <i class="fas fa-edit fa-4x"></i>
+                        </a>
+                        <a href="{% url 'news:deleteNews' news.id %}" class="text-gray" onclick="return confirm('Voulez-vous vraiment supprimer l''news {{ news.title }} ?');">
+                            <i class="fas fa-trash fa-4x"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-7">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title"> <h3 class="my-3">{{ news.title }}</h3></h3>
+                </div>
+                <div class="card-body">
+
+                    <p class="text-muted">
+                    {{ news.post }}
+                    </p>
+
+                    <hr>
+
+                    <strong><i class="fas fa-user mr-1"></i> {{ news.author }}</strong>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+{% block script %} 
+
+{% endblock %}
+
+
+<!-- jQuery -->
+<!-- Bootstrap 4 -->
+

@@ -34,6 +34,7 @@ class News(models.Model):
     nbComment = models.IntegerField(default=0)
     case = models.ForeignKey(Case, on_delete=models.CASCADE)
     step = models.IntegerField(default=0)
+    link = models.CharField(max_length=200, blank='true', null=True)
     
     def __str__(self):
         return self.title
