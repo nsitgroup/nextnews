@@ -10,4 +10,4 @@ class CreateCase(forms.ModelForm):
 class CreateNews(forms.ModelForm):
     class Meta:
         model = models.News
-        fields = ['title', 'resume', 'post', 'status', 'image', 'case', 'link']
+        fields = ['title', 'resume', 'post', 'categorie', 'image', 'case']

@@ -51,7 +51,7 @@
         
         {% for news in news %}
             <tr>
-                <td><a href="{% url 'news:detailNews' news.id %}" style="text-decoration: none;">{{ news.title|slice:":20" }}</a></td>
+                <td><a href="{% url 'news:detailNews' news.id %}" style="text-decoration: none;">{{ news.title|slice:":40" }}</a></td>
                 <td>{{ news.lastModifiedDate  | date:"d/m/Y" }}</td>
                 <td>{{ news.resume|slice:":20" }}</td>
                 <td>{{ news.author   }}</td>

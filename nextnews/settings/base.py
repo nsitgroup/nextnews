@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'news',
     'ckeditor',
     'dashboard',
-    'bootstrap4'
+    'categorie',
+    'bootstrapform',
 ]
 
 MIDDLEWARE = [
